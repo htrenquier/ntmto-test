@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.http import JsonResponse
-from mfalcon.models import route
 import json
 from django.views.decorators.csrf import csrf_exempt
 import mfalcon.r2d2
@@ -43,7 +41,7 @@ def upload_file(request):
 
         # Compute odds of survival
         r2 = mfalcon.r2d2.R2D2(falcon_data, empire_data)
-        odds = r2.give_odds()
+        odds = r2.get_odds()
         
         return JsonResponse({'message': str(odds) + '% of survival.'})
     else:

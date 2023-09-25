@@ -25,8 +25,8 @@ def main(arguments):
 
     r2 = mfalcon.r2d2.R2D2(falcon_config,empire_leaks)
     if args.output_best_route:
-        r2.print_routes()
-    print(r2.give_odds())
+        r2.print_journey()
+    print(r2.get_odds())
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))

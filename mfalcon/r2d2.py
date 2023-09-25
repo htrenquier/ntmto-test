@@ -1,6 +1,5 @@
 import sqlite3
-import numpy as np
-import os
+
 
 class R2D2(object):
     """
@@ -104,14 +103,13 @@ class R2D2(object):
         # Mathematical formula to compute the odds of survival.
         return int((1-sum([9**j/(10**(j+1)) for j in range(k)]))*100)
     
-    def give_odds(self):
+    def get_odds(self):
         if self.possible_routes():
             return self.prob_func(self.possible_routes()[0][1])
         else:
             return 0
 
-    def print_routes(self):
-        # Find possible routes
+    def print_journeys(self):
         if self.possible_routes():
             for route in self.possible_routes():
                 print('Odds are ' + str(self.prob_func(route[1])) + '% of survival.')
@@ -119,5 +117,13 @@ class R2D2(object):
         else:
             print('No possible route found.')
 
-    def give_routes(self):
-        return self.possible_routes()
+    def get_journey(self):
+        return self.possible_routes()[0]
+    
+    def print_journey(self):
+        if self.possible_routes():
+            j = self.get_journey()
+            print('Odds are ' + str(self.prob_func(j[1])) + '% of survival.')
+            print('Route: ' + ' - '.join([step[0] + step[1] for step in j[0]]))
+        else:
+            print('No possible route found.')
