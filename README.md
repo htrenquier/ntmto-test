@@ -6,7 +6,7 @@ You will only have to meet a few requirements:
  - Nodejs
  - Python 3
 
-The web application is at http://localhost:8000
+The web application is at http://localhost:3000
 
 ### In order to boot *c3po* (frontend):
 ```
