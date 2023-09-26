@@ -26,4 +26,3 @@ yarn-error.log*
 mfalcon/migrations/
 node_modules/
 db.sqlite3
-example1/

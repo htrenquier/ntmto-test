@@ -6,18 +6,19 @@ You will only have to meet a few requirements:
  - Nodejs
  - Python 3
 
-The web application is at http://localhost:3000
+
 
 ### In order to boot *c3po* (frontend):
+The web application is at http://localhost:3000
 ```
 cd c3po
-npm i react-icons
+npm i
 npm start
 ```
 
 ### Booting the Millenium Falcon's onboard computer *mfalcon* (backend):
 ```
-pip install requirements.txt
+pip install django django-cors-headers
 python manage.py test (optional)
 python manage.py runserver
 ```
